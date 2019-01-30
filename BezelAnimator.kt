@@ -15,7 +15,7 @@ fun View.generatedBezierObjectAnimator(
             2 -> BezelCurveLevel3(controlPointF[0], controlPointF[1])
             3 -> BezelCurveLevel4(controlPointF[0], controlPointF[1], controlPointF[2])
             4 -> BezelCurveLevel5(controlPointF[0], controlPointF[1], controlPointF[2], controlPointF[3])
-            else -> throw IllegalArgumentException("error point params")
+            else -> throw IllegalArgumentException("throw IllegalArgumentException("Params \"controlPointF\" size must be > 0 && < 4")")
         }, startPoint, endPoint
     ).apply {
         addUpdateListener {
