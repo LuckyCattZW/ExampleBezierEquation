@@ -39,3 +39,37 @@
 ```
 
 <img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=b15f585fc3ea15ce55e3e85bd7695196/7e3e6709c93d70cf89a39cd7f2dcd100bba12b8a.jpg"/>
+
+```java
+    /**
+     * 打印杨辉三角
+     */
+    @Test
+    public void test1() {
+        final int NMAX = 10;//行数
+        // allocate triangular array
+        int[][] odds = new int[NMAX + 1][];
+        for (int n = 0; n <= NMAX; n++)
+            odds[n] = new int[n + 1];
+        // fill triangular array
+        for (int n = 0; n < odds.length; n++)
+            for (int k = 0; k < odds[n].length; k++) {
+                /*
+                 * compute binomial coefficient n*(n-1)*(n-2)*...*(n-k+1)/(1*2*3*...*k)
+                 */
+                int lotteryOdds = 1;
+                for (int i = 1; i <= k; i++)
+                    lotteryOdds = lotteryOdds * (n - i + 1) / i;
+
+                odds[n][k] = lotteryOdds;
+            }
+
+        // print triangular array
+        for (int[] row : odds) {
+            for (int odd : row){
+                System.out.printf("%4d", odd);
+            }
+            System.out.println();
+        }
+    }
+```
