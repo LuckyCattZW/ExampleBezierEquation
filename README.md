@@ -1,7 +1,7 @@
 # ExampleBezierEquation
 贝泽尔曲线公式
 
-[简书：n阶贝塞尔曲线计算公式][https://www.jianshu.com/p/7c56103dcf63]
+[@简书：n阶贝塞尔曲线计算公式](https://www.jianshu.com/p/7c56103dcf63)
 
 ```java
     /**
