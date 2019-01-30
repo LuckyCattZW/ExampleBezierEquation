@@ -20,11 +20,11 @@ constructor(private val p1: PointF) : TypeEvaluator<PointF> {
      */
     override fun evaluate(/*[0,1]*/t: Float, p0: PointF, p2: PointF): PointF = PointF().apply {
         x = (p0.x * Math.pow(1.0 - t, 2.0)
-                + 3 * p1.x * t * (1.0 - t)
+                + 2 * p1.x * (1.0 - t) * t
                 + p2.x * Math.pow(t.toDouble(), 2.0)).toFloat()
 
         y = (p0.y * Math.pow(1.0 - t, 2.0)
-                + 3 * p1.y * t * (1.0 - t)
+                + 2 * p1.y * (1.0 - t) * t
                 + p2.y * Math.pow(t.toDouble(), 2.0)).toFloat()
     }
 
