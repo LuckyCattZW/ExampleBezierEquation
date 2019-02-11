@@ -10,13 +10,7 @@ fun View.generatedBezierObjectAnimator(
     startPoint: PointF, endPoint: PointF, vararg controlPointF: PointF
 ): ObjectAnimator =
     ObjectAnimator.ofObject(
-        this, null, when (controlPointF.size) {
-            1 -> BezelCurveLevel2(controlPointF[0])
-            2 -> BezelCurveLevel3(controlPointF[0], controlPointF[1])
-            3 -> BezelCurveLevel4(controlPointF[0], controlPointF[1], controlPointF[2])
-            4 -> BezelCurveLevel5(controlPointF[0], controlPointF[1], controlPointF[2], controlPointF[3])
-            else -> throw IllegalArgumentException("error point params")
-        }, startPoint, endPoint
+        this, null, BezelCurveLevel(*controlPointF), startPoint, endPoint
     ).apply {
         addUpdateListener {
             val pointF = it.animatedValue as PointF
