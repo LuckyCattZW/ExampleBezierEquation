@@ -89,7 +89,7 @@ constructor(private vararg val pc: PointF) : TypeEvaluator<PointF> {
                         + 5 * pc[3].y * (1.0 - t) * Math.pow(t.toDouble(), 4.0)
                         + pe.y * Math.pow(t.toDouble(), 5.0)).toFloat()
             }
-            else -> PointF()
+            else -> ps
         }
 
 }
